@@ -1,0 +1,261 @@
+<?php require_once("../resources/config.php"); ?>
+
+<?php include(TEMPLATE_FRONT . DS . "header.php"); ?>
+
+<!-- header start -->
+<?php include(TEMPLATE_FRONT . DS . "navbar.php"); ?>
+<!--header end-->
+
+<!-- breadcrumb start -->
+<!-- <section class="about-breadcrumb">
+    <div class="about-back section-tb-padding" style="background-image: url(image/about-image.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="about-7">
+                        <ul class="about-link">
+                            <li class="go-home"><a href="index.php">Home</a></li>
+                            <li class="about-p"><span>Collection</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- breadcumb start -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="breadcrumb-start">
+                    <ul class="breadcrumb-url">
+                        <li class="breadcrumb-url-li">
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li class="breadcrumb-url-li">
+                            <span>Categories</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb end -->
+
+<!-- grid-list start -->
+<section class="section-tb-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-12">
+                <div class="all-filter">
+                    <div class="categories-page-filter">
+                        <h4 class="filter-title">Categories</h4>
+                        <a href="#category-filter" data-bs-toggle="collapse" class="filter-link"><span>Categories </span><i class="fa fa-angle-down"></i></a>
+                        <ul class="all-option collapse" id="category-filter">
+                        <?php
+
+                        get_categories2();
+
+                        ?>
+                        </ul>
+                    </div>
+                    <div class="price-filter">
+                        <h4 class="filter-title">Filter by price</h4>
+                        <a href="#price-filter" data-bs-toggle="collapse" class="filter-link"><span>Filter by price </span><i class="fa fa-angle-down"></i></a>
+                        <ul class="all-price collapse" id="price-filter">
+                            <li class="f-price">
+                                <input type="checkbox">
+                                <label>0-100</label>
+                            </li>
+                            <li class="f-price">
+                                <input type="checkbox">
+                                <label>100-200</label>
+                            </li>
+                            <li class="f-price">
+                                <input type="checkbox">
+                                <label>200-300</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro-size">
+                        <h4 class="filter-title">Filter by size</h4>
+                        <a href="#size-filter" data-bs-toggle="collapse" class="filter-link"><span>Filter by size </span><i class="fa fa-angle-down"></i></a>
+                        <ul class="all-size collapse" id="size-filter">
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>10kg</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>10ltr</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>1kg</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>1ltr</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>2kg</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>3kg</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>5kg</label>
+                            </li>
+                            <li class="choice-size">
+                                <input type="checkbox">
+                                <label>5ltr</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter-tag">
+                        <h4 class="filter-title">Filter by tags</h4>
+                        <a href="#tags-filter" data-bs-toggle="collapse" class="filter-link"><span>Filter by tags </span><i class="fa fa-angle-down"></i></a>
+                        <ul class="all-tag collapse" id="tags-filter">
+                            <li class="tag"><a href="product.html">Almond</a></li>
+                            <li class="tag"><a href="product.html">Banana</a></li>
+                            <li class="tag"><a href="product.html">Bitrrot</a></li>
+                            <li class="tag"><a href="product.html">Blackberry</a></li>
+                            <li class="tag"><a href="product.html">Chikoo</a></li>
+                            <li class="tag"><a href="product.html">Coconet</a></li>
+                            <li class="tag"><a href="product.html">Guava</a></li>
+                            <li class="tag"><a href="product.html">juice</a></li>
+                            <li class="tag"><a href="product.html">Ladiesfinger</a></li>
+                            <li class="tag"><a href="product.html">Litchi</a></li>
+                            <li class="tag"><a href="product.html">Minirrot</a></li>
+                            <li class="tag"><a href="product.html">Mussel</a></li>
+                            <li class="tag"><a href="product.html">Onion</a></li>
+                            <li class="tag"><a href="product.html">Organic-food</a></li>
+                            <li class="tag"><a href="product.html">Potato</a></li>
+                            <li class="tag"><a href="product.html">Shrimp</a></li>
+                            <li class="tag"><a href="product.html">Tomato</a></li>
+                        </ul>
+                    </div>
+                    <div class="vendor-filter">
+                        <h4 class="filter-title">Filter by vendor</h4>
+                        <a href="#vendor" data-bs-toggle="collapse" class="filter-link"><span>Filter by vendor </span><i class="fa fa-angle-down"></i></a>
+                        <ul class="all-vendor collapse" id="vendor">
+                            <li class="f-vendor">
+                                <input type="checkbox">
+                                <label>Fargglad</label>
+                            </li>
+                            <li class="f-vendor">
+                                <input type="checkbox">
+                                <label>Flisat</label>
+                            </li>
+                            <li class="f-vendor">
+                                <input type="checkbox">
+                                <label>Kyrre</label>
+                            </li>
+                            <li class="f-vendor">
+                                <input type="checkbox">
+                                <label>Lustigt</label>
+                            </li>
+                            <li class="f-vendor">
+                                <input type="checkbox">
+                                <label>Sundvik</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter-banner">
+                        <a href="grid-list.html" class="grid-banner">
+                            <img src="image/grid-banner.jpg" class="img-fluid" alt="image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-12">
+                <div class="grid-list-banner" style="background-image: url(image/slider17.jpg);">
+                    <div class="grid-banner-content">
+                        <h4>Bestseller</h4>
+                        <p>Praesent dapibus, neque id cursus Ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, facilisis luc...</p>
+                    </div>
+                </div>
+                <div class="grid-list-area">
+                    <div class="grid-list-select">
+                        <ul class="grid-list">
+                            <li class="colloction-icn"><a href="grid-list-2.html"><i class="ti-layout-list-thumb"></i></a></li>
+                            <li class="colloction-icn"><a href="grid-list-3.html"><i class="ti-layout-grid2"></i></a></li>
+                            <li class="colloction-icn three-grid"><a href="grid-list.html" class="active"><i class="ti-layout-grid3"></i></a></li>
+                            <li class="colloction-icn four-grid"><a href="grid-list-4.html"><i class="ti-layout-grid4"></i></a></li>
+                        </ul>
+                        <ul class="grid-list-selector">
+                            <li>
+                                <label>Sort by</label>
+                                <select>
+                                    <option>Featured</option>
+                                    <option>Best selling</option>
+                                    <option>Alphabetically,A-Z</option>
+                                    <option>Alphabetically,Z-A</option>
+                                    <option>Price, low to high</option>
+                                    <option>Price, high to low</option>
+                                    <option>Date new to old</option>
+                                    <option>Date old to new</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-pro">
+                        <ul class="grid-product">
+                            <?php 
+                            get_products_in_cat_page();
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="list-all-page">
+                    <span class="page-title">Showing 1 - 17 of 17 result</span>
+                    <div class="page-number">
+                        <a href="grid-list.html" class="active">1</a>
+                        <a href="grid-list-2.html">2</a>
+                        <a href="grid-list-3.html">3</a>
+                        <a href="grid-list-4.html">4</a>
+                        <a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- grid-list start -->
+
+
+
+
+
+
+<?php include(TEMPLATE_FRONT . DS . "footer2.php"); ?>
+
+<!-- back to top start -->
+<a href="javascript:void(0)" class="scroll" id="top">
+    <span><i class="fa fa-angle-double-up"></i></span>
+</a>
+<!-- back to top end -->
+<div class="mm-fullscreen-bg"></div>
+<!-- jquery -->
+<script src="js/modernizr-2.8.3.min.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<!-- bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- popper -->
+<script src="js/popper.min.js"></script>
+<!-- fontawesome -->
+<script src="js/fontawesome.min.js"></script>
+<!-- owl carousal -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- swiper -->
+<script src="js/swiper.min.js"></script>
+<!-- custom -->
+<script src="js/custom.js"></script>
+</body>
+
+</html>
